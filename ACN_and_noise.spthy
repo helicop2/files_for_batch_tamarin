@@ -1,0 +1,31 @@
+plus/2 [AC].
+zero/0.
+one/0.
+id/1.
+senc/2.
+sdec/2.
+pair/2.
+first/1.
+rightor/2.
+rightand/2.
+checksign/2.
+sign/2.
+pk/1.
+zero < one < id < pk < plus < rightor < rightand < first < pair < checksign < sign < senc < sdec.
+
+
+=== Equational Theory
+
+plus(x,x) = zero.
+id(x) = x.
+sdec(senc(m,k),k) = m.
+first(pair(x,y)) = x.
+rightor(x,one) = one.
+rightor(x,zero) = x.
+rightor(x,x) = x.
+rightand(x,one) = x.
+rightand(x,zero) = zero.
+rightand(x,x) = x.
+rightand(rightor(y,x),rightor(x,y)) = rightor(x,y).
+rightor(rightand(y,x),rightand(x,y)) = rightand(x,y).
+checksign(sign(m, k), pk(k)) = m.

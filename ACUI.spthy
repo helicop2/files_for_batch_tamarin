@@ -6,3 +6,4 @@ zero < plus.
 === Equational Theory
 
 plus(x,zero) = x.
+plus(x,x) = x.

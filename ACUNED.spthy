@@ -1,0 +1,15 @@
+acunedExample = FvpInput
+    { symbols = 
+        [ Symbol "plus" 2 "AC"
+        , Symbol "zero" 0 "Syntactic"
+        , Symbol "enc" 2 "Syntactic"
+        , Symbol "dec" 3 "Syntactic"
+        ]
+    , order = Order ["zero", "plus", "enc", "dec"]
+    , equations = 
+        [ ("plus(x,x)", "zero")
+        , ("plus(x,zero)", "x")
+        , ("dec(enc(plus(x,r),k),k,r)", "x")
+        ]
+    , rewriteRn = []
+    } 

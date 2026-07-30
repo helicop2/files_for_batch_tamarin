@@ -1,0 +1,22 @@
+toy554Example :: FvpInput
+toy554Example = FvpInput
+    { symbols = 
+        [ Symbol "reenc" 3 "Syntactic"
+        , Symbol "comb" 2 "Syntactic"
+        , Symbol "transform" 1 "Syntactic"
+        , Symbol "dec" 2 "Syntactic"
+        , Symbol "enc" 3 "Syntactic"
+        , Symbol "pdec" 2 "Syntactic"
+        , Symbol "mult" 2 "AC"
+        , Symbol "plus" 2 "AC"
+        , Symbol "pk" 1 "Syntactic"
+        ]
+    , order = Order ["pk", "plus", "mult", "pdec", "enc", "dec", "transform", "comb", "reenc"]
+    , equations = 
+        [ ("reenc(enc(m,pk(k),r1),r2,pk(k))", "enc(m,pk(k),mult(r1,r2))"),
+            ("comb(pdec(c,sk1),pdec(c,sk2))", "pdec(c,plus(sk1,sk2))"),
+            ("transform(pdec(c,k))", "dec(c,k)"),
+            ("dec(enc(m,pk(k),r),k)", "m")
+        ]
+    , rewriteRn = []
+    }

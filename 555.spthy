@@ -1,0 +1,16 @@
+toy555Example :: FvpInput
+toy555Example = FvpInput
+    { symbols = 
+        [ Symbol "expo" 2 "Syntactic",
+            Symbol "mult" 2 "AC",
+            Symbol "zkp" 3 "Syntactic",
+            Symbol "verify" 3 "Syntactic",
+            Symbol "true" 0 "Syntactic"
+        ]
+    , order = Order ["true", "verify", "zkp", "mult", "expo"]
+    , equations = 
+        [ ("expo(expo(g,x),y)", "expo(g,mult(x,y))"),
+            ("verify(zkp(expo(g,x),x,g),expo(g,x),g)", "true")
+        ]
+    , rewriteRn = []
+    }
